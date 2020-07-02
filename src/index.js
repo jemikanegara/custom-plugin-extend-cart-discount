@@ -1,5 +1,6 @@
 import pkg from "../package.json";
-import schemas from './schemas/index.js'
+import resolvers from './resolvers/index.js';
+import schemas from './schemas/index.js';
 
 /**
  * @summary Import and call this function to add this plugin to your API.
@@ -12,6 +13,7 @@ export default async function register(app) {
     name: "extend-cart-discount",
     version: pkg.version,
     graphQL: {
+      resolvers,
       schemas
     },
   });
