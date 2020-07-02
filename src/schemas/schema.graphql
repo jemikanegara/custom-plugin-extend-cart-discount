@@ -1,0 +1,20 @@
+"Applied Discount Code Information"
+type BillingData {
+  "Discount Code ID"
+  discountId: ID!
+  "Applied Discount Code"
+  code: String!
+}
+
+"Applied discount"
+type CartBilling {
+  "Applied Discount ID for removal purpose"
+  _id: ID!
+  "Applied Discount Code Information"
+  data: BillingData!
+}
+
+extend type Cart {
+  "Custom data to expose applied discount ID for discount removal purpose"
+  billing: [CartBilling]
+}
